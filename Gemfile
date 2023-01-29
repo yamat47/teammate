@@ -8,6 +8,8 @@ ruby '3.2.0'
 gem 'bootsnap', require: false
 gem 'importmap-rails'
 gem 'jbuilder'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 gem 'pg'
 gem 'puma'
 gem 'rails'
