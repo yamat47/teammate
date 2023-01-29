@@ -9,6 +9,7 @@ services:
       - db_volume:/var/lib/postgresql/data
   app:
     build: .
+    env_file: .env
     environment:
       DB_USER: postgres
       DB_PASSWORD: password
