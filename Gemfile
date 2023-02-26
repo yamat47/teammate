@@ -6,6 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.0'
 
 gem 'bootsnap', require: false
+gem 'haml'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'omniauth-google-oauth2'
@@ -21,6 +22,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'haml_lint', require: false
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
