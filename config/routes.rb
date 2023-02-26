@@ -1,8 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: 'homes#show'
+  resource :homes, only: [:show]
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  namespace :auth do
+    resource :session, only: %i[new create destroy]
+
+    get ':provider/callback', to: 'sessions#create'
+    get 'failure', to: redirect('/')
+    delete 'logout', to: 'sessions#destroy', as: 'logout'
+  end
 end
